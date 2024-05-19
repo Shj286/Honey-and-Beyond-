@@ -1,0 +1,353 @@
+body 
+{
+    align-content: center;
+    margin: 0;
+}
+
+.container
+ { background-color:#FFC436;
+    background-size: cover;
+    text-align: center;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    margin: 0px;  /*This fulfills requirement 5.2 (e)*/
+    padding: 2px 2px;  /*This fulfills requirement 5.2 (e)*/
+    letter-spacing: .1em;
+
+}
+
+.search-container 
+{  
+    float: left;
+    margin: 180px;
+    
+}
+
+.search-box {
+    padding: 10px;
+    border: 1px solid #ccc;
+   height: 35px;
+    width: 160px;
+}
+
+.search-button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #555;
+}
+
+.logo
+{ 
+    width: 270px;
+    height: 250px;
+}
+
+header 
+{
+    display: flex;
+    flex-direction: column;
+   text-align: left;
+    padding-right: 10px; /* Add padding for spacing */
+  
+  }
+
+  .headin {   
+    align-items: center;
+    display: flex;
+    margin-right:45% ;
+    flex-direction:column;
+  }
+
+/*.headin
+{
+    display: block;
+    margin: 0 auto;
+    align-content: center;
+}*/
+
+h1  /*This fulfills requirement 5.2 (a)*/
+{  font-family: 'Anton', sans-serif;
+   font-size: 53px;
+  text-shadow:2px 2px 4px rgba(179, 136, 26, 0.516); /*This fulfills requirement 5.2 (c) and 5.2 (f) */ 
+  text-align: center;
+ 
+}
+
+.rectangular-container {  /*This fulfills requirement 5.2 (a)*/
+    size: 23px;
+    width: 260px;
+    height: 50px;
+    color: white;
+    background-color:black; 
+    padding-bottom: 10px; 
+    padding-left: 10px;
+    
+}
+
+.free-space {
+    margin-top: 250px; /* Adjust the margin to create free space after the layout */
+}
+
+
+.free-space1 {
+    margin-top: 120px; /* Adjust the margin to create free space after the layout */
+}
+
+.free-space2 {
+    margin-top: 50px; /* Adjust the margin to create free space after the layout */
+}
+
+.container1 {
+    display: flex;
+    align-items: center; /* Center vertically */
+}
+
+.image-container1 {
+    flex: 1; /* Take up 1/3 of the container  */
+    margin-left: 300px; /* Adjust the margin between image and text */
+   
+}
+
+.image-container1 img {  /*This fulfills requirement 5.2 (a)*/
+    width: 100%; /* Make the image fill its container */
+    max-width: 100%; /* Ensure the image doesn't exceed its original size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.text-container1 {
+    flex: 2; /* Take up 2/3 of the container (adjust as needed) */
+}
+
+.text-container1 p  
+{
+    font-family: 'Anaheim', sans-serif;
+    width: 70%;
+
+}
+
+.container2 {
+    display: flex;
+    align-items: center; /* Center vertically */
+}
+
+.image-container2 {
+    flex: 1; /* Take up 1/3 of the container  */
+    margin-right: 300px; /* Adjust the margin between image and text */
+}
+
+.image-container2 img {
+    width: 100%; /* Make the image fill its container */
+    max-width: 100%; /* Ensure the image doesn't exceed its original size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.text-container2 {
+    flex: 2; /* Take up 2/3 of the container (adjust as needed) */
+}
+
+.text-container2 p 
+{   margin-left: 29%;
+    font-family: 'Anaheim', sans-serif;
+    width: 70%;
+
+}
+
+
+
+.container3 {
+    display: flex;
+    align-items: center; /* Center vertically */
+}
+
+.image-container3 {
+    flex: 1; /* Take up 1/3 of the container     */
+    margin-left: 300px; /* Adjust the margin between image and text */
+}
+
+.image-container3 img {
+    width: 100%; /* Make the image fill its container */
+    max-width: 100%; /* Ensure the image doesn't exceed its original size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.text-container3 {
+    flex: 2; /* Take up 2/3 of the container  */
+}
+
+.text-container3 p 
+{   padding-left: 50px;
+    font-family: 'Anaheim', sans-serif;
+    width: 70%;
+
+}
+
+nav {
+    
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {  /*This fulfills requirement 5.2 (a)*/  /*This fulfills requirement 5.2 (b)*/
+    color:black;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+    font-size: 29px;
+}
+
+nav a:hover {   /*This fulfills requirement 5.2 (d)*/
+    background-color: #555;
+}
+
+.aboutus
+{ 
+    width: 50%;
+   margin: 0 auto;
+}
+
+
+.container4 {
+  
+    margin: 50px ;
+    align-items: center; /* Center vertically */
+}
+
+.container4 a {
+    color: black; /* Set text color */
+    font-weight: normal; /* Make the text bold */
+    font-size: 38px; /* Set the font size */
+    font-family: 'Anaheim', sans-serif;
+    margin: 100px;
+}
+
+.container4 a:hover {
+    color: grey /* Change text color on hover */
+}
+
+.image-container4 {
+    display: flex;
+    justify-content: space-between;
+    margin: 130px;
+}
+
+.image-container4 img {
+    width: 30%; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+   
+}
+
+.container4 h {
+
+    margin-left: 190px;
+    margin-right: 120px;
+    letter-spacing: 5px;
+    font-family: 'Gruppo', sans-serif;
+    font-size: 30px;
+    cursor: pointer;
+
+}
+
+.container5 a {
+    color: black; /* Set text color */
+    font-weight: bold; /* Make the text bold */
+    font-size: 12px; /* Set the font size */
+    margin: 240px;
+    letter-spacing: 2px;
+    cursor: pointer;
+   
+}
+
+.container5 a:hover {   /*This fulfills requirement 5.2 (d)*/
+    color: grey /* Change text color on hover */
+}
+
+#about p::after { 
+    content: "";
+    display: inline-block;
+    background: linear-gradient(90deg, transparent, transparent 66%, gold 66%, gold);
+    filter: alpha(opacity=50);  /*This fulfills requirement 5.2 (f)*/
+    opacity: 0.5;  /*This fulfills requirement 5.2 (f)*/
+}
+
+#about p:nth-child(3n+2)::after {  /*This fulfills requirement 5.2 (d)*/
+    background: none;
+}
+
+footer
+{ background-color: #555;
+max-width: 100%;
+padding: 8px 8px;
+}
+
+footer p   /*This fulfills requirement 5.2 (b)*/
+{ color:whitesmoke;
+    text-align: center;
+    font-size: 18px;
+
+}
+
+.last-update {
+    font-size: 0.8em;
+    color: white;
+    text-align: center;
+  }
+
+.email-link {
+    color: whitesmoke; /* Change this to the desired color */
+}
+
+.boundary-box {
+    position: fixed; /* Fixed position to stay on the boundary */
+    top:0;
+    bottom:0;
+    left: 0;
+    width: 30px; /* Adjust the width as needed */
+    background-color: #333; /* Background color of the box */
+   
+  }
+
+  .boundary-box1 {
+    position: fixed; /* Fixed position to stay on the boundary */
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 30px; /* Adjust the width as needed */
+    background-color: #333; /* Background color of the box */
+  }
+
+
+#cart-icon {   /*This fulfills requirement 5.2 (b)*/
+    position: absolute;
+    top: 240px;
+    right: 100px;
+    background-color: gold;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#cart-details {
+    position: fixed;
+    top: 40px;
+    right: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: none;
+    max-width: 300px;
+}
+
+#cart {
+    width: 200px;
+    height: 500px;
+   float: right;
+   margin-right: 50px;
+   margin-top: 100PX;
+   position: relative;
+    padding: 20px;
+    border: 1px solid #ccc;
+}

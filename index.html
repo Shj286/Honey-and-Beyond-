@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">  <!-- This fulfills requirement 5.1 (e)-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- This fulfills requirement 5.1 (e)-->
+    <title>Honey And Beyond </title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gruppo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anaheim&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="honey.css">
+    <link rel="stylesheet" href="cart.css">
+    <!--link rel="stylesheet" href="honey_layout.css"-->
+
+    <style>
+        body 
+        {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+        }
+
+        .scroll-container 
+        {
+            display: flex;
+            white-space: nowrap; /* Prevent line breaks */
+            overflow-x: auto; /* Enable horizontal scrolling */
+            scroll-behavior: smooth; /* Enable smooth scrolling */
+            width: 100vw;
+        }
+
+        .image-container 
+        {
+            position: relative;
+        }
+
+        .image 
+        {
+            flex: 0 0 auto; /* Don't grow or shrink */
+            width: 100vw; /* Full width of the viewport */
+            height: 85vh;
+        }
+
+        .image-text 
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            font-family: 'Anton', sans-serif;
+            display: none;
+        }
+
+        .scroll-arrow 
+        {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1; 
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .scroll-arrow.left 
+        { position: fixed;
+            left: 0;
+        }
+
+        .scroll-arrow.right 
+        { position:fixed;
+            right: 0;
+        }
+       
+
+        .boundary-box 
+        {
+         position: fixed; /* Fixed position to stay on the boundary */
+         top:0;
+         bottom:0;
+         left: 0;
+         width: 30px; /* Adjust the width as needed */
+         background-color: #333; /* Background color of the box */
+   
+        }
+
+        .boundary-box1
+        {
+         position: fixed; /* Fixed position to stay on the boundary */
+         top: 0;
+          bottom: 0;
+         right: 0;
+         width: 30px; /* Adjust the width as needed */
+         background-color: #333; /* Background color of the box */
+    
+         }
+
+         cross-reference-link 
+         {
+          position: absolute;
+          top: 10px;
+          right: 30px;
+          text-decoration: none;
+          color: #333;
+         font-weight: bold;
+        }
+
+  
+    </style>
+</head>
+<body>
+    <body>
+
+        <div class="boundary-box"></div>
+        <div class="boundary-box1"></div>
+       
+        <div class="container">
+            <p> Free Shipping on all orders over $99-use code FREESHIP</p>
+
+        </div>
+          <div class="search-container">
+           <div>
+              <input type="text" class="search-box" placeholder="Enter product name">
+            </div>
+        </div>
+        
+         <header> <!-- This fulfills requirement 5.1 (a)-->
+           <div class="headin">
+            <a href="CrossReferencePage.html" style="font-size: 30px;"  class="cross-reference-link">Cross Reference Page</a>
+            <a href="Shop.html"> <img src="Honey1.jpg" alt="The logo" class="logo"> </a> <!-- This fulfills requirement 5.1 (b)-->
+                <h1 id="name">Honey And Beyond </h1>
+            <div class="rectangular-container">
+               <p>Discover the Sweetness of Nature <br></p>
+            </div>
+            </div>
+        </header>
+    
+        <nav> <!-- This fulfills requirement 5.1 (a)-->
+            <a href="index.html">Home</a>
+            <a href="About.html">About us</a> 
+            <a href="Shop.html">Shop</a>
+            <a href="BeeCulture.html">Bee Culture</a> 
+            <a href="Contact.html">Contact</a>
+        </nav>
+    
+    <div id="cart-icon" onclick="toggleCartDetails()">
+        🛒
+    </div>
+
+    <div id="cart-details">
+        <h3>Shopping Cart</h3>
+        <ul id="cartItems"></ul>
+        <p id="total">Total: $0.00</p>
+        <button id="checkoutButton" onclick="openCheckoutWindow()">Proceed to Checkout</button>
+    </div>
+
+    <div class="scroll-arrow left" onclick="scrollImages(-1)">◄</div>  <!-- This fulfills requirement 5.5 (b)-->
+
+<div class="scroll-container">
+    <div class ="image-container">
+    <img class="image" src="honey-bees-337695_1280.jpg" alt="Image 1"> <!-- This fulfills requirement 5.1 (c)-->
+    <div class ="image-text" id="text1">BETTER WITH HONEY</div>
+    </div>
+    <div class ="image-container">
+    <img class="image" src="honey-1006972_1280.jpg" alt="Image 2">
+    <div class ="image-text" id="text1">100% PURE CANDADIAN HONEY</div>
+    </div>
+
+    <div class ="image-container">
+    <img class="image" src="kai-hawes-7PLkSMXOZkk-unsplash.jpg" alt="Image 3">
+    <div class ="image-text" id="text1">TASTE THE VARIETY</div>
+    </div>
+</div>
+
+<div class="scroll-arrow right" onclick="scrollImages(1)">►</div>  <!-- This fulfills requirement 5.5 (b)-->
+
+
+
+
+    <main> <!-- This fulfills requirement 5.1 (a)-->
+        <section id="about"> <!-- This fulfills requirement 5.1 (a)-->
+            <br><br><br><br><br><br>
+            <h2 style="font-family: 'Oswald', sans-serif; text-align: center; font-size: 58px;">Pure Honey</h2>
+            <div class="aboutus"> 
+                <p style="font-family: 'Cutive Mono', monospace; text-align: center; font-size: 36px;justify-content: right;">From deeply rich to light and delicate, our pure honey 
+                line not only comes in a variety of flavours, but 
+                they all share the same qualities: 100% pure and unpasteurized,
+                 preserving the numerous benefits of raw honey’s naturally
+                 occurring proteins, minerals, vitamins, and enzymes. </p>
+            <br>
+            <p style="font-family: 'Cutive Mono', monospace; text-align: center; font-size: 36px;">A daily dose of these natural sweeteners will help
+                 you form healthy habits that you’ll love sticking to.</p>
+                 </div>
+        </section>
+
+        <div class="free-space"></div>
+
+        <div class="container1">
+            <div class="image-container1">
+                <img src="Honey5.jpg" alt="image1">  <!-- This fulfills requirement 5.1 (b)-->
+            </div>
+            <div class="text-container1">
+                <p style="font-size: 30px;font-family: 'Cutive Mono', monospace;">We use organic treatments and practice 
+                    cruelty-free beekeeping methods.</p>
+            </div>
+        </div>
+
+        <div class="container2">
+            
+            <div class="text-container2">
+                <p style="font-size: 30px;font-family: 'Cutive Mono', monospace;">Our apiary locations are carefully selected based on their farming practices. 
+                    We support local, organic and regenerative farms in the Okanagan Valley.</p>
+            </div>
+
+            <div class="image-container2">
+                <img src="Honey3.jpg" alt="image2"> <!-- This fulfills requirement 5.1 (b)-->
+            </div>
+
+        </div>
+
+        <div class="container3">
+            <div class="image-container3">
+                <img src="Honey4.jpg" alt="image3">
+            </div>
+            <div class="text-container3">
+                <p style="font-size: 30px;font-family: 'Cutive Mono', monospace;">Our goal is to raise awareness in our eco systems and to 
+                    improve the health of the honeybees while increasing their population locally.</p>
+            </div>
+        </div>
+
+        <div class="free-space1"></div>
+
+    <div class="container4">
+        <a href="Shop.html">Shop Products </a>
+      <div class="image-container4">
+        <img src="oil-4262839_1280.jpg" alt="oil" style="height: 420px;" width="365px;">
+        <img src="St-Paul-St-577.jpg.webp" alt="honeycomb" style="height: 420px;" width="365px;">
+        <img src="honey-2925033_1280.jpg" alt="purehoney" style="height: 420px;" width="365px;">
+       </div>
+       <h> Honey Oil</h>  
+       <h> Honeycomb</h>  
+      
+        <h> Organic Honey <br></h> 
+        
+       <div class="container5">
+       <a href="Shop.html">SHOP</a>
+       <a href="Shop.html">SHOP</a>
+       <a href="Shop.html">SHOP</a>
+       </div>
+    </div>
+
+    <div class="free-space1"></div>
+
+  
+    <footer> <!-- This fulfills requirement 5.1 (a)-->
+        <p>&copy; 2023 HONEY AND BEYOND . All rights reserved.</p>  <!-- This fulfills requirement 5.1 (d)-->
+        <p> 123 Kingsway Ave <br> Kamloops,BC, V2C 6N7 <br> +1 234 555 6789 <br> </p>
+       <p> Contact us at <a href="mailto:info@honey&beyond.com" class="email-link">info@honey&beyond.com</a>.</p>  <!-- This fulfills requirement 5.1 (f)-->
+       <div class="last-update" id="lastUpdate">Last Updated: </div>  <!-- This fulfills requirement 5.1 (g)-->
+    </footer>
+
+    <script>
+
+    const lastUpdateElement = document.getElementById('lastUpdate');
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };  
+    <!-- This fulfills requirement 5.6 (a)-->
+    lastUpdateElement.textContent += new Date().toLocaleString('en-US', options);    
+
+        function searchProducts() {
+            // Get the value entered by the user
+            var searchInput = document.getElementById('searchInput').value;
+
+            // redirecting to a shop
+           
+            window.location.href = 'Shop.html?query=' + encodeURIComponent(searchInput);
+        }
+
+        let scrollIndex = 0;
+    
+        function scrollImages(direction) {
+            const container = document.querySelector('.scroll-container');
+            const images = document.querySelectorAll('.image-container');
+            const textElements = document.querySelectorAll('.image-text');
+    
+            scrollIndex += direction;
+    
+            if (scrollIndex < 0) {
+                scrollIndex = 0;
+            } else if (scrollIndex >= images.length) {
+                scrollIndex = images.length - 1;
+            }
+    
+            const targetImage = images[scrollIndex];
+            container.scrollTo({
+                left: targetImage.offsetLeft,
+                behavior: 'smooth'
+            });
+            updateText();
+        }
+    
+        function updateText(index) {
+            const textElements = document.querySelectorAll('.image-text');
+            textElements.forEach((textElement, i) => {
+                textElement.style.display = i === index - 1 ? 'block' : 'none';
+            });
+        }
+        window.addEventListener('scroll', updateText);
+    </script>
+    
+    </body>
+    </html>

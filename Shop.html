@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honey And Beyond </title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gruppo&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="honey.css">
+    <link rel="stylesheet" href="cart.css">
+    <script src="co_order.js" async></script>   
+
+    </head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden; 
+        }
+       
+
+        .product {
+            max-width: 300px;
+            margin-left: 100px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+            display: inline-block;
+        }
+        
+        .product img 
+        {
+            max-width: 100%;
+            height: auto;
+            margin-left: 0px;
+            
+        }
+
+        .products-container 
+        {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+          text-align: center;
+        }
+
+        .product h2 
+        {
+            margin-bottom: 10px;
+        }
+
+        .product p 
+        {
+            margin-bottom: 10px;
+        }
+
+        .product button 
+        {
+            background-color:black;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .product button:hover {
+            background-color: grey;
+        }
+
+        #cart {
+            width: 200px;
+            height: 500px;
+           float: right;
+           margin-right: 50px;
+           margin-top: 100PX;
+           position: relative;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+    
+
+        #payment-form {
+            display: none;
+           
+            margin-left: 400px;
+        }
+
+        #payment-form input {
+            margin-bottom: 10px;
+        }
+
+        #pay-button {
+            background-color: black;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #pay-button:hover {
+            background-color: white;
+        }
+
+        .boundary-box {
+      position: fixed; /* Fixed position to stay on the boundary */
+      top: 0px;
+      bottom: 0;
+      left: 0;
+      width: 30px; /* Adjust the width as needed */
+      background-color: #333; /* Background color of the box */
+      /* You can also add other styles like border, box-shadow, etc. */
+    }
+
+    .boundary-box1 {
+      position: fixed; /* Fixed position to stay on the boundary */
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 30px; /* Adjust the width as needed */
+      background-color: #333; /* Background color of the box */
+      /* You can also add other styles like border, box-shadow, etc. */
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p> Free Shipping on all orders over $99-use code FREESHIP</p>
+       </div>
+    
+       <div class="search-container">
+       
+        <div>
+            
+            <input type="text" class="search-box" placeholder="Enter product name">
+           
+        </div>
+    </div>
+    
+      
+
+    <header>
+       
+        <div class="headin">
+            <img src="Honey1.jpg" alt="The logo" class="logo">
+            <h1 id="name">Honey And Beyond </h1>
+        <div class="rectangular-container">
+           <p>Discover the Sweetness of Nature <br></p>
+        </div>
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="About.html">About us</a> 
+        <a href="Shop.html">Shop</a>
+        <a href="BeeCulture.html">Bee Culture</a> 
+        <a href="Contact.html">Contact</a>
+       
+    </nav>
+
+    <div id="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cartItems"></ul>   <!-- This fulfills requirement 5.4 (a)-->
+        <p id="total">Total: $0.00</p>
+        <button id="checkoutButton" onclick="openPaymentWindow()">Proceed to Checkout</button>
+    </div>
+  
+    <div class="boundary-box"></div>
+    <div class="boundary-box1"></div>
+   
+    <div class="free-space1"></div>
+
+    <div id="cart-icon" onclick="toggleCartDetails()">
+        🛒
+    </div>
+
+    <div id="cart-details">
+        <h3>Shopping Cart</h3>
+        <ul id="cartItems"></ul>
+        <p id="total">Total: $0.00</p>
+        <button id="checkoutButton" onclick="openCheckoutWindow()">Proceed to Checkout</button>
+    </div>
+
+    <div class="products-container">
+    <div class="product" id="product1">
+        <img src="Lifestyle-alfalfa_1024x1024.jpg.webp" alt="Product 1">
+        <h2>ALFALFA-CLOVER GOURMET HONEY</h2>
+        <p>Price: $19.99</p>
+        <button onclick="addToCart('ALFALFA-CLOVER GOURMET HONEY', 19.99)">Add to Cart</button>
+    </div>
+
+    <div class="product" id="product2">
+        <img src="Lifestyle-coldpressedbuckwheat_1024x1024.jpg.webp" alt="Product 2">
+        <h2>BUCKWHEAT BLOSSOM GOURMET HONEY</h2>
+        <p>Price: $23.99</p>
+        <button onclick="addToCart('BUCKWHEAT BLOSSOM GOURMET HONEY', 23.99)">Add to Cart</button>
+    </div>
+
+    <div class="product" id="product3">
+        <img src="Lifestyle-Honeycomb_1024x1024.jpg.webp" alt="Product 3">
+        <h2>FRESH HONEYCOMB</h2>
+        <p>Price: $10.99</p>
+        <button onclick="addToCart('FRESH HONEYCOMB', 10.99)">Add to Cart</button>
+    </div>
+
+    <div class="product" id="product4">
+        <img src="Lifestyle-organic_1024x1024.jpg.webp" alt="Product 4">
+        <h2>ORGANIC HONEY</h2>
+        <p>Price: $25.99</p>
+        <button onclick="addToCart('ORGANIC HONEY', 25.99)">Add to Cart</button>
+    </div>
+
+    <div class="product" id="product5">
+        <img src="Lifestyle-creamedlarge_1024x1024.jpg.webp" alt="Product 5">
+        <h2>LARGE CREAMED HONEY</h2>
+        <p>Price: $17.99</p>
+        <button onclick="addToCart('LARGE CREAMED HONEY', 17.99)">Add to Cart</button>
+    </div>
+
+    <div class="product" id="product6">
+        <img src="Lifestyle-raspberry_1024x1024.jpg.webp" alt="Product 6">
+        <h2>RASPBERRY BLOSSOM GOURMET HONEY</h2>
+        <p>Price: $22.99</p>
+        <button onclick="addToCart('RASPBERRY BLOSSOM GOURMET HONEY', 22.99)">Add to Cart</button>
+    </div>
+    </div>
+
+    <div class="free-space1"></div>
+
+    <div id="payment-form">
+        <h2>Payment Information</h2>
+        <form id="paymentForm">    <!-- This fulfills requirement 5.4 (a) and 5.3(a)-->
+            <label for="cardNumber">Card Number:</label>
+            <input type="text" id="cardNumber" name="cardNumber" required>
+
+            <label for="expirationDate">Expiration Date:</label>
+            <input type="text" id="expirationDate" name="expirationDate" placeholder="MM/YYYY" required>
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" required>
+
+
+            <button type="button" id="pay-button" onclick="completePayment()">Pay Now</button>
+            
+        </form>
+    </div>
+
+
+
+    <footer>
+        
+        <p>&copy; 2023 HONEY AND BEYOND . All rights reserved.</p>
+        <p> 123 Kingsway Ave <br> Kamloops,BC, V2C 6N7 <br> +1 234 555 6789 <br> </p>
+       <p> Contact us at <a href="mailto:info@honey&beyond.com" class="email-link">info@honey&beyond.com</a>.</p>
+       
+    </footer>
+
+    <script>
+        let cartItems = [];
+        let total = 0;
+
+        function addToCart(productName, price) {
+            cartItems.push({ name: productName, price: price });
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartElement = document.getElementById('cartItems');
+            const totalElement = document.getElementById('total');
+
+            // Clear existing items
+            cartElement.innerHTML = '';
+
+            // Add new items
+            cartItems.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+                cartElement.appendChild(li);
+            });
+
+            // Calculate and display total
+            total = cartItems.reduce((sum, item) => sum + item.price, 0);
+            totalElement.textContent = `Total: $${total.toFixed(2)}`;
+        }
+
+        function showPaymentForm() {
+            const paymentForm = document.getElementById('payment-form');
+            paymentForm.style.display = 'block';
+        }
+        function openCheckoutWindow() {
+            const checkoutWindow = window.open('', '_blank');
+            const checkoutContent = `
+                <h2>Checkout</h2>
+                <ul>${cartItems.map(item => `<li>${item.name} - $${item.price.toFixed(2)}</li>`).join('')}</ul>
+                <p>Total: $${total.toFixed(2)}</p>
+               
+            `;
+            checkoutWindow.document.body.innerHTML = checkoutContent;
+        }
+        
+        function openPaymentWindow() {
+            const paymentWindow = window.open('', '_blank');
+            const paymentForm = document.createElement('div');
+            paymentForm.innerHTML = `
+                <h2>Payment Information</h2>
+                <form id="paymentForm">
+                    <!-- Your payment form fields here -->
+                    <label for="cardNumber">Card Number:</label>
+                    <input type="text" id="cardNumber" name="cardNumber" required>
+
+                    <label for="expirationDate">Expiration Date:</label>
+                    <input type="text" id="expirationDate" name="expirationDate" placeholder="MM/YYYY" required>
+
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" required>
+
+                    <button type="button" onclick="window.opener.completePayment()">Pay Now</button> 
+                </form>
+            `;
+            paymentWindow.document.body.appendChild(paymentForm);
+           
+         
+          
+        }
+
+        function completePayment() {
+        const cardNumber = document.getElementById('cardNumber').value;
+        const expirationDate = document.getElementById('expirationDate').value;
+        const cvv = document.getElementById('cvv').value;
+
+        // Simulate a payment process (replace this with actual payment processing code)
+        if (validatePaymentInfo(cardNumber, expirationDate, cvv)) {
+            alert('Payment successful! Thank you for your purchase.');
+            cartItems = []; // Clear the cart after successful payment
+            updateCart();
+            // Close the payment window (optional)
+            window.close();
+            openCheckoutWindow();
+        } else {
+            alert('Payment failed. Please check your payment information and try again.');
+        }
+    }
+
+    function validatePaymentInfo(cardNumber, expirationDate, cvv) {
+        // Simulate basic validation (replace this with more robust validation logic)
+        const cardNumberRegex = /^\d{16}$/;
+        const expirationDateRegex = /^(0[1-9]|1[0-2])\/\d{4}$/;
+        const cvvRegex = /^\d{3}$/;
+
+        return cardNumberRegex.test(cardNumber) && expirationDateRegex.test(expirationDate) && cvvRegex.test(cvv);
+    }
+
+       
+        
+        
+
+    </script>
+
+    </body>
+    </html>

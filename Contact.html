@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honey And Beyond </title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gruppo&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="honey.css">
+    <!--link rel="stylesheet" href="honey_layout.css"-->
+
+    <style>
+        body 
+        {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+        }
+
+        form 
+        {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        label
+         {
+            display: block;
+            margin-bottom: 10px;
+            text-align: left;
+            font-weight: bolder;
+            font-size: 26px;
+           
+        }
+
+        input, textarea 
+        {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {    /*This fulfills requirement 5.3 (b)**/
+            background-color: black;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color:grey;
+        }
+
+        textarea{
+            width:680px;
+            height: 290px;
+        }
+        input
+        {
+            width:680px;
+            height: 70px;
+        }
+
+        input, select, textarea   /*This fulfills requirement 5.3 (b)**/
+        {
+         width: 100%;
+        padding: 10px;
+         margin-bottom: 10px;
+         box-sizing: border-box;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+         }
+
+    /* Apply styles when the form element is in focus */
+    /*This fulfills requirement 5.3 (c)**/
+     input:focus, select:focus, textarea:focus 
+     {
+      border-color:goldenrod; /* Change border color when focused */
+      box-shadow: 0 0 5px rgba(255, 183, 0, 0.5); /* Add box shadow when focused */
+      outline: none; /* Remove default focus outline */
+    }
+
+    /* Add styles for validation messages */
+    .error-message    /*This fulfills requirement 5.3 (c)**/
+    {
+      color: #dc3545;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    </style>
+    </head>
+
+    <body>
+
+        <div class="boundary-box"></div>
+        <div class="boundary-box1"></div>
+
+        <div class="container">
+            <p> Free Shipping on all orders over $99-use code FREESHIP</p>
+           </div>
+        
+           <div class="search-container">
+           
+            <div>
+                
+                <input type="text" class="search-box" placeholder="Enter product name">
+               
+            </div>
+        </div>
+
+        <div id="cart-icon" onclick="toggleCartDetails()">
+            🛒
+        </div>
+          
+        
+        <header>
+          
+            <div class="headin">
+                <img src="Honey1.jpg" alt="The logo" class="logo">
+                <h1 id="name">Honey And Beyond </h1>
+            <div class="rectangular-container">
+               <p>Discover the Sweetness of Nature <br></p>
+            </div>
+            </div>
+            
+        </header>
+    
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="About.html">About us</a> 
+            <a href="Shop.html">Shop</a>
+            <a href="BeeCulture.html">Bee Culture</a> 
+            <a href="Contact.html">Contact</a>
+          
+        </nav>
+       
+        <center>
+        <img src="contact.jpg.webp" style="margin-top: 50px; height: 410px;width: 700px;">
+        </center>
+        <h1 style="font-family: 'Anton', sans-serif; font-weight:bold; font-size: 48px; margin-top: 160px;"> Have a question or inquiry? <br> </h1>
+        <h2 style="font-family: 'Gruppo', sans-serif; font-size: 32px; text-align: center;"> We'd love to hear from you!</p>
+
+            <form action="#" method="post">     <!-- This fulfills requirement 5.3 (a)-->
+                <label for="name">Name:</label>  
+                <input type="text" id="name" name="name" required>    
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+        
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>    <!-- This fulfills requirement 5.3 (a)-->
+        
+                <button type="submit">Contact us</button>
+            </form>
+
+            <div class="free-space1"></div>
+
+    <footer>
+        <p>&copy; 2023 HONEY AND BEYOND . All rights reserved.</p>
+        <p> 123 Kingsway Ave <br> Kamloops,BC, V2C 6N7 <br> +1 234 555 6789 <br> </p>
+       <p> Contact us at <a href="mailto:info@honey&beyond.com" class="email-link">info@honey&beyond.com</a>.</p>
+       
+    </footer>
+
+            <script>
+                function validateForm() {
+                    var name = document.getElementById('name').value;
+                    var email = document.getElementById('email').value;
+                    var message = document.getElementById('message').value;
+        
+                    // Reset previous error messages
+                    document.getElementById('nameError').innerHTML = '';
+                    document.getElementById('emailError').innerHTML = '';
+                    document.getElementById('messageError').innerHTML = '';
+        
+                    // Validate name  
+                    <!-- This fulfills requirement 5.6 (b)-->
+                    if (name.trim() === '') {
+                        document.getElementById('nameError').innerHTML = 'Name is required';
+                        return false;
+                        /* This fulfills requirement 5.6 (c)*/
+                    } else if (!/^[a-zA-Z]+$/.test(name)) { 
+                        document.getElementById('nameError').innerHTML = 'Name should contain letters only';
+                        return false;
+                    }
+        
+                    // Validate email
+                    /* This fulfills requirement 5.6 (b)*/
+        
+                    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        document.getElementById('emailError').innerHTML = 'Enter a valid email address';
+                        return false;
+                    }
+        
+                    // Validate message
+                    if (message.trim() === '') {
+                        document.getElementById('messageError').innerHTML = 'Message is required';
+                        return false;
+                    }
+        
+                    // Form is valid
+                    return true;
+                }
+            </script>
+
+
+        </body>
+</html>
